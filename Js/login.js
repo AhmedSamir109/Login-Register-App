@@ -48,6 +48,7 @@ logInBtn.addEventListener('click' , function(e){
   // e.preventDefault();
   logIn();
 
+
 } )
 
 
@@ -61,6 +62,9 @@ for(var i = 0 ; i < userAccounts.length ; i++){
     anchor.setAttribute('href','home.html');
     logInAlert1.classList.add('d-none')
     logInAlert2.classList.add('d-none')
+
+    //to use it to display name in home page
+    localStorage.setItem('currentUser' , userAccounts[i].userName);
 
   }else if (userAccounts[i].userEmail !== logInEmail.value && userAccounts[i].userPass !== logInPass.value){
 

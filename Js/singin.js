@@ -91,6 +91,7 @@ signUpName.addEventListener('blur' , validateSignUpName);
 
 
 function validateSignUpEmail(){
+    
     var signUpEmailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/ ;
     var email = signUpEmail.value;
 
