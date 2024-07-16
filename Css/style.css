@@ -1,0 +1,21 @@
+.width{
+    width: 55%;
+}
+
+
+@media screen and (max-width:900px) {
+    .width{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .width{
+        width: 96%;
+    }
+}
+
+/* 
+.welcome{
+    filter: blur(1px);
+} */

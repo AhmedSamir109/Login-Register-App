@@ -22,6 +22,7 @@ if(localStorage.getItem('userAccounts') != null){
 };
 
 
+
 function createAccount(){
 
     var account ={
@@ -30,7 +31,7 @@ function createAccount(){
         userPass : signUpPass.value
     };
 
-    if(validateSignUpName() && validateSignUpEmail() && validateSignUpPass() && signUpName.value !== "" && signUpEmail.value !== "" && signUpPass.value !== ""){
+    if(validateSignUpName() && validateSignUpEmail() && validateSignUpPass()){
     
     userAccounts.push(account);
 
@@ -39,7 +40,7 @@ function createAccount(){
     localStorage.setItem('userAccounts' , jsonAcconts);
 
     return true ;
-}
+    }
 
 };
 
@@ -48,11 +49,10 @@ function createAccount(){
 
 
 
-signUpBtn.addEventListener('click' , function(){
-   
+signUpBtn.addEventListener('click' , function(e){
     createAccount();
 
-    if(createAccount()){
+    if(createAccount){
 
         anchor.setAttribute('href' , 'index.html')
     };
@@ -95,41 +95,55 @@ function validateSignUpEmail(){
     var signUpEmailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/ ;
     var email = signUpEmail.value;
 
-for( var i = 0 ; i<userAccounts.length ; i++){
+    if(userAccounts.length == 0 ){
 
-    if(signUpEmailRegex.test(email) && userAccounts[i].userEmail !== signUpEmail.value ){
-
-      
-        
-        signUpEmail.classList.add("is-valid");
-        signUpEmail.classList.remove("is-invalid");
-        signUpEmailAlert1.classList.add("d-none");
-        signUpEmailAlert2.classList.add("d-none");
-
-        return true ;
+            signUpEmail.classList.add("is-valid");
+            signUpEmail.classList.remove("is-invalid");
+            signUpEmailAlert1.classList.add("d-none");
+            signUpEmailAlert2.classList.add("d-none");
     
+            return true ;
 
-    }else if (userAccounts[i].userEmail === signUpEmail.value){
+    }else{
 
-        signUpEmail.classList.add('is-invalid');
-        signUpEmail.classList.remove('is-valid');
-        signUpEmailAlert2.classList.remove('d-none');
-        signUpEmailAlert1.classList.add('d-none');
+        for( var i = 0 ; i<userAccounts.length ; i++){
 
-
-        return false ;
-
-    }else if (signUpEmailRegex.test(email) == false){
-        signUpEmail.classList.add('is-invalid');
-        signUpEmail.classList.remove('is-valid');
-        signUpEmailAlert1.classList.remove('d-none');
-        signUpEmailAlert2.classList.add('d-none');
+            if(signUpEmailRegex.test(email) && userAccounts[i].userEmail !== email ){
         
-        return false ;
+            
+                
+                signUpEmail.classList.add("is-valid");
+                signUpEmail.classList.remove("is-invalid");
+                signUpEmailAlert1.classList.add("d-none");
+                signUpEmailAlert2.classList.add("d-none");
+        
+                return true ;
+            
+        
+            }else if (userAccounts[i].userEmail === signUpEmail.value){
+        
+                signUpEmail.classList.add('is-invalid');
+                signUpEmail.classList.remove('is-valid');
+                signUpEmailAlert2.classList.remove('d-none');
+                signUpEmailAlert1.classList.add('d-none');
+        
+        
+                return false ;
+        
+            }else if (signUpEmailRegex.test(email) == false){
+                signUpEmail.classList.add('is-invalid');
+                signUpEmail.classList.remove('is-valid');
+                signUpEmailAlert1.classList.remove('d-none');
+                signUpEmailAlert2.classList.add('d-none');
+                
+                return false ;
+        
+            }
+            
+        } 
 
     }
-    
-} 
+
 
 };
 

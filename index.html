@@ -1,67 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="Css/all.min.css">
-    <link rel="stylesheet" href="Css/bootstrap.min.css">
-</head>
-<body>
-    
-    <div class=" w-50 m-auto">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="Css/all.min.css">
+        <link rel="stylesheet" href="Css/bootstrap.min.css">
+        <link rel="stylesheet" href="Css/style.css">
+
+    </head>
+    <body>
         
-            <div class="container-md d-flex justify-content-center align-items-center flex-column vh-100 w-100 ">
+        <div class="width m-auto">
             
-            
-                    <h1 class="mb-5"> Login </h1>
+                <div class="container-md d-flex justify-content-center align-items-center flex-column vh-100 w-100 ">
                 
-                    <div class="border rounded-2 p-5 shadow w-100">
+                
+                        <h1 class="mb-5"> Login </h1>
                     
-                        <input class="form-control mb-4" type="email" placeholder=" Email"  id="email" autocomplete="off">
-                        <input class="form-control mb-4" type="password" placeholder=" Password" id="pass" autocomplete="off">
+                        <div class="border rounded-2 p-sm-5 px-3 py-5 shadow w-100">
                         
-                        <div class="alert alert-danger d-none" role="alert" id="logInAlert1"  >
-                            <strong> The email or password is incorrect</strong> 
-                        </div>
-                        <div class="alert alert-danger d-none" role="alert" id="logInAlert2"  >
-                            <strong> You must fill in your data </strong> 
-                        </div>
+                            <input class="form-control mb-4" type="email" placeholder=" Email"  id="email" autocomplete="off">
+                            <input class="form-control mb-4" type="password" placeholder=" Password" id="pass" autocomplete="off">
+                            
+                            <div class="alert alert-danger d-none" role="alert" id="logInAlert1"  >
+                                <strong> The email or password is incorrect</strong> 
+                            </div>
+                            <div class="alert alert-danger d-none" role="alert" id="logInAlert2"  >
+                                <strong> You must fill in your data </strong> 
+                            </div>
+                            
+                
+                            <a href="" id="anchor"> <button class="btn btn-outline-primary w-100" id="logIn-btn"> Login </button> </a>
                         
-            
-                        <a href="" id="anchor"> <button class="btn btn-outline-primary w-100" id="logIn-btn"> Login </button> </a>
+                        </div>
+                
                     
-                    </div>
-            
-                  
-                    <div class="my-4 ">
-                        <p>Don't have an account ? <a href="register.html" class="text-decoration-none">create an account</a></p>
-                    </div>
-            </div>
-            
-    </div>
-    
-
+                        <div class="my-4 text-center ">
+                            <p>Don't have an account ? <a href="register.html" class="text-decoration-none">create an account</a></p>
+                        </div>
+                </div>
+                
+        </div>
         
-    
 
 
+        <script src="Js/bootstrap.bundle.min.js"></script>
+        <script src="Js/login.js"></script>
 
+    </body>
 
-
-
-
-
-
-
-
-
-
-
-
-    <script src="Js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="Js/main.js"></script> -->
-    <script src="Js/login.js"></script>
-
-</body>
 </html>
